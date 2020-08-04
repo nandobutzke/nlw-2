@@ -86,7 +86,7 @@
   margin-left: 0.8rem;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 1099px) {
   :root {
     font-size: 40%;
   }
@@ -109,7 +109,8 @@
   .logo-container {
     grid-area: proffy;
     text-align: initial;
-    align-self: center;
+    align-self: center; /* Alinha a Grid de acordo com o elemento */
+    margin: 0;
   }
 
   .logo-container img {
