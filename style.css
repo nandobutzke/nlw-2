@@ -1,0 +1,65 @@
+/* tamanho da fonte é relativo ao que está acima :root -> 50% body -> 100% de 50% -> h1 -> 50% de 100% de 50% */
+/* rem -> relativo ao root porém é o mesmo caminho de relatividade (direto ao tamanho da fonte do root) */
+/* em -> relativo ao que está acima (não vai direto ao root) */
+/* root é a raíz */
+/* Mobile first -> desenvolver primeiro para mobile dps no desktop (no caso será responsivo, para os dois) */
+/* Tamanho da fonte padrão: 16px - 100% - 1rem */
+/* será mais utilizado o rem ou % */
+
+:root {
+  --color-background: #F0F0F7;
+  --color-primary-lighter: #9871F5;
+  --color-primary-light: #916BEA;
+  --color-primary: #8257E5;
+  --color-primary-dark: #774DD6;
+  --color-primary-darker: #6842c2;
+  --color-secondary: #04D361;
+  --color-secondary-dark: #04BF58;
+  --color-title-in-primary: #FFFFFF;
+  --color-text-in-primary: #D4C2FF;
+  --color-text-title: #32264D;
+  --color-text-complement: #9C98A6;
+  --color-text-base: #6A6180;
+  --color-line-in-white: #E6E6F0;
+  --color-input-background: #F8F8FC;
+  --color-button-text: #FFFFFF;
+  --color-box-base: #FFFFFF;
+  --color-box-footer: #FAFAFC;
+  --color-small-info: #C1BCCC;
+
+  font-size: 60%; /* controle das medidas rem */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Medindo o conteúdo pela largura da caixa */
+}
+
+html,
+body {
+  height: 100vh; /* Divide a tela em 100 pedaços de cima para baixo */
+}
+
+body {
+  background: var(--color-background);
+  display: flex;  /* Forma diferente de alinhamento de itens ao contrário da block que ocupa uma linha inteira */
+  align-items: center;
+  justify-content: center;
+} 
+
+body,
+input,
+button,
+textarea {
+  font: 500 1.6rem Poppins;
+/*   font-weight: 500;
+  font-size: 1.6rem;
+  font-family: Poppins; */
+  color: var(--color-text-base);
+} 
+
+#container {
+  width: 90vw; 
+  max-width: 700px;
+}
