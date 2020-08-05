@@ -31,7 +31,7 @@
 
 .page-header .header-content {
   width: 90%;
-  margin: 3.2rem auto;
+  margin: 4.2rem auto;
 
   position: relative;
 }
@@ -76,6 +76,6 @@
   }
 
   .page-header .header-content strong {
-    max-width: 350px;
+    max-width: 400px;
   }
 }
