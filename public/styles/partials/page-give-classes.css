@@ -130,7 +130,7 @@
   .schedule-item {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    column-gap: 1.6rem; /* Espaço entre colunas */ 
+    column-gap: 3.2rem; /* Espaço entre colunas */ 
   }
 
   #page-give-classes #schedule-items .select-block+.input-block,
