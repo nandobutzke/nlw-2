@@ -1,10 +1,11 @@
 const db = require('./db')
 const Database = require('sqlite-async')
+const createProffy = require('./createProffy')
 
 Database.then((db) => {
   //insert data
 
-  proffy = {
+  proffyValue = {
     name: "Fernando Butzke",
     avatar: "https://avatars0.githubusercontent.com/u/63071834?s=460&u=0730fded6f6b5b22c5f3dfeb4b24fc42c4c19c0a&v=4",
     whatsapp: "47983421254",
@@ -17,7 +18,7 @@ Database.then((db) => {
     //proffy id will come to database
   }
 
-  classSchedule = [
+  classScheduleValue = [
     //class_id will come by database, after register the class
     {
       weekday: 1,
@@ -30,6 +31,8 @@ Database.then((db) => {
       time_to: 1220
     }
   ]
+
+  //createProffy(db, {proffyValue, classValue, classScheduleValue})
 
   //consult data
 })
