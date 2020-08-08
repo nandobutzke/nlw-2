@@ -1,7 +1,7 @@
 // logic of inserting data into the database
 
 
-module.exports = async function(db, {proffyValue, classValue, classScheduleValue}) {
+module.exports = async function(db, {proffyValue, classValue, classScheduleValues}) {
   //insert data into proffys table
   const insertedProffy = await db.run(`
     INSERT INTO proffys (
@@ -10,10 +10,10 @@ module.exports = async function(db, {proffyValue, classValue, classScheduleValue
       whatsapp,
       bio
     ) VALUES (
-      ${proffyValue.name},
-      ${proffyValue.avatar},
-      ${proffyValue.whatsaap},
-      ${proffyValue.bio}
+      "${proffyValue.name}",
+      "${proffyValue.avatar}",
+      "${proffyValue.whatsaap}",
+      "${proffyValue.bio}"
     );
   `)
     
@@ -27,12 +27,32 @@ module.exports = async function(db, {proffyValue, classValue, classScheduleValue
         cost,
         proffy_id
       ) VALUES (
-        ${classValue.subject},
-        ${classValue.cost},
-        ${proffy_id}
+        "${classValue.subject}",
+        "${classValue.cost}",
+        "${proffy_id}"
       );
   `)
   
-  const class_id = insertedProffy.lastID;
-  
+  const class_id = insertedClass.lastID;
+
+  //insert data into class_schedule table
+
+  const insertedAllClassScheduleValues = classScheduleValues.map((classScheduleValue) => {
+    return db.run(`
+      INSERT INTO class_schedule (
+        class_id,
+        weekday,
+        time_from,
+        time_to
+      ) VALUES (
+        "${class_id}",
+        "${classScheduleValue.weekday}",
+        "${classScheduleValue.time_from}",
+        "${classScheduleValue.time_to}"
+      );
+    `)
+  })
+
+  //Execute all db.runs() of class_schedules
+  await Promise.all(insertedAllClassScheduleValues)
 }

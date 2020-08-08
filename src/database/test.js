@@ -1,8 +1,7 @@
-const db = require('./db')
-const Database = require('sqlite-async')
+const Database = require('./db')
 const createProffy = require('./createProffy')
 
-Database.then((db) => {
+Database.then(async (db) => {
   //insert data
 
   proffyValue = {
@@ -13,12 +12,12 @@ Database.then((db) => {
   }
 
   classValue = {
-    subject: "Educação Física",
+    subject: 4,
     cost: "20"
     //proffy id will come to database
   }
 
-  classScheduleValue = [
+  classScheduleValues = [
     //class_id will come by database, after register the class
     {
       weekday: 1,
@@ -32,7 +31,38 @@ Database.then((db) => {
     }
   ]
 
-  //createProffy(db, {proffyValue, classValue, classScheduleValue})
+  await createProffy(db, {proffyValue, classValue, classScheduleValues})
 
   //consult data
+
+  const selectedProffys = await db.all("SELECT * FROM proffys");
+  //console.log(selectedProffys);
+
+  //Select classes and proffys
+
+  const selectedAllClassesAndProffys = await db.all(`
+    SELECT classes.*, proffys.*
+    FROM proffys
+    JOIN classes ON (classes.proffy_id = proffys.id)
+    WHERE classes.proffy_id = 1;
+  `)
+
+  console.log(selectedAllClassesAndProffys)
+
+  //8h <= horário < 18h
+
+  const selectClassesSchedules = await db.all(`
+    SELECT class_schedule.*
+    FROM class_schedule
+    WHERE class_schedule.class_id = 1
+    AND class_schedule.weekday = "0"
+    AND class_schedule.time_from <= "520"
+    AND class_schedule.time_to > "520" 
+  `)
+
+  console.log(selectClassesSchedules)
+
+
+
+
 })
