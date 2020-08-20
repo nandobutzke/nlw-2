@@ -56,11 +56,11 @@
   margin-right: 2.4rem;
 }
 
-.buttons-container a.study {
+.buttons-container a.mechanic {
   background-color: var(--color-primary-lighter);
 }
 
-.buttons-container a.study:hover {
+.buttons-container a.mechanic:hover {
   background-color: var(--color-primary-light);
 }
 
