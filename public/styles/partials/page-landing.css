@@ -64,11 +64,11 @@
   background-color: var(--color-primary-light);
 }
 
-.buttons-container a.give-classes:hover {
+.buttons-container a.repair:hover {
   background-color: var(--color-secondary-dark);
 }
 
-.buttons-container a.give-classes {
+.buttons-container a.repair {
   background-color: var(--color-secondary);
   margin-right: 0;
 }
