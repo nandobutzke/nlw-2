@@ -18,8 +18,8 @@ server
   .use(express.static("public"))                //public content
   //application routes
   .get("/", pageLanding)
-  .get("/study", pageStudy)
-  .get("/give-classes", pageGiveClasses)
+  .get("/mechanic", pageStudy)
+  .get("/repair", pageGiveClasses)
   .post("/save-classes", saveClasses)
   //Start server
   .listen(5000);
