@@ -1,14 +1,12 @@
 const subjects = [
-  "Artes",
-  "Biologia",
-  "Ciência",
-  "Educação Física",
-  "Física",
-  "Geografia",
-  "História",
-  "Matemática",
-  "Português",
-  "Química"
+  "Industrial",
+  "De estruturas",
+  "De automóveis",
+  "Pesada",
+  "De usinas",
+  "De bordo",
+  "De voo",
+  "De manutenção de aeronaves"
 ]
 
 const weekdays = [
