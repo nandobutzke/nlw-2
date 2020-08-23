@@ -10,7 +10,7 @@ async function pageStudy(req, res) {
   const filters = req.query;
 
   if(!filters.subject || !filters.weekday || !filters.time) {
-    return res.render("study.html", { filters, subjects, weekdays });     //Adding new object to study.html
+    return res.render("repair.html", { filters, subjects, weekdays });     //Adding new object to study.html
   }
 
   //convert hours to minutes
@@ -40,7 +40,7 @@ async function pageStudy(req, res) {
       proffy.subject = getSubject(proffy.subject)
     })
 
-    return res.render('study.html', { proffys, subjects, filters, weekdays })
+    return res.render('repair.html', { proffys, subjects, filters, weekdays })
 
 
   } catch (error) {
@@ -51,7 +51,7 @@ async function pageStudy(req, res) {
 }
 
 function pageGiveClasses(req, res) {
-  return res.render("give-classes.html", {subjects, weekdays});
+  return res.render("mechanic.html", {subjects, weekdays});
 }
 
 async function saveClasses(req, res) {
