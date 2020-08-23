@@ -1,12 +1,12 @@
 const subjects = [
-  "Industrial",
-  "De estruturas",
-  "De automóveis",
-  "Pesada",
-  "De usinas",
-  "De bordo",
-  "De voo",
-  "De manutenção de aeronaves"
+  "Mecânico Industrial",
+  "Mecânico de Estruturas",
+  "Mecânico de Automóveis",
+  "Mecânica Pesada",
+  "Mecânico de Usinas",
+  "Mecânico de Bordo",
+  "Mecânico de Voo",
+  "Mecânico de Manutenção de Aeronaves"
 ]
 
 const weekdays = [
